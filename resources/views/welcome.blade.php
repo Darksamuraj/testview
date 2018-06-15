@@ -1,17 +1,34 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row">
-        <div class="col-md-10 col-md-offset-1">
-            <div class="panel panel-default">
-                <div class="panel-heading">Welcome</div>
-
-                <div class="panel-body">
-                    Your Application's Landing Page.
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+		<form >
+ 			  <p><h1 id="message">Ты добрый?</h1></p>
+   			 <p><input name="character" type="radio" value="добрый"> Да</p>
+   			 <p><input name="character" type="radio" value="злой"> Нет</p>
+   			 <p><button onclick="answer();return false;" >Выбрать</button></p>
+  		</form>
+		<script src="http://code.jquery.com/jquery-1.11.2.js"></script>
+<script>
+		function answer(){
+		checks=document.getElementsByName("character");
+		for(i=0;i<checks.length;++i){
+			if(checks[i].type=="radio" && checks[i].checked){
+				result=checks[i].value;
+			}
+		}
+			$.ajax({
+       			 url: '/sendmail',
+    	  	  method: 'post',
+    	 	  data: {text:result},
+    	 	   headers: {
+     		   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+   				 },
+    		    success: function(result1){
+					alert(result1);
+							
+     		   },
+   			 });
+			return false;
+	}
+</script>
 @endsection
