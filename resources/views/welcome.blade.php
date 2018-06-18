@@ -3,8 +3,8 @@
 @section('content')
 		<form >
  			  <p><h1 id="message">Ты добрый?</h1></p>
-   			 <p><input name="character" type="radio" value="добрый"> Да</p>
-   			 <p><input name="character" type="radio" value="злой"> Нет</p>
+   			 <p><input name="character" type="radio" value="2"> Да</p>
+   			 <p><input name="character" type="radio" value="3"> Нет</p>
    			 <p><button onclick="answer();return false;" >Выбрать</button></p>
   		</form>
 		<script src="http://code.jquery.com/jquery-1.11.2.js"></script>
