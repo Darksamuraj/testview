@@ -9,18 +9,26 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
 
+
 class ContactController extends Controller
 {
      public function send()
     {
 		//echo "Yes";
 		//echo Auth::user()->name;
-		 $user = Auth::user()->id;
+		$user = Auth::user()->id;
 		 $usery = Auth::user();
 		 //$user->update(['user_id'=>2]);
 		 DB::table('users')
 		 				->where('id',$user)
-		 				->update(['user_id'=>$_POST['text']]);
-       echo $usery->name, " " ,$_POST['text'];
+		 				->update(['dobro_id'=>$_POST['text']]);
+		/* $result="";
+		if($_POST['text']==2){
+			$result="Добрый";
+		}else{
+			$result="Злой";
+		}*/
+		
+      echo $usery->dobro->name, " ";
     }
 }

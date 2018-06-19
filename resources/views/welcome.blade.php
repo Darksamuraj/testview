@@ -24,11 +24,12 @@
      		   'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
    				 },
     		    success: function(result1){
-					alert(result1);
-							
+					alert(result1);	
+					$('body').append(result1);	
      		   },
    			 });
 			return false;
 	}
 </script>
+<div id="result">что то</div>
 @endsection

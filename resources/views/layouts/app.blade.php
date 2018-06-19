@@ -23,10 +23,9 @@
 		</div>
 		<div id="menu">
 			<ul>
-				<li class="current_page_item"><a href="{{ url('/') }}" accesskey="1" title="">Главная</a></li>
-				<li><a href="#" accesskey="2" title="{{ url('/home') }}">Результаты</a></li>
-				<li><a href="#" accesskey="3" title="">Тест</a></li>
-				<li><a href="#" accesskey="4" title="">О авторе</a></li>
+				<li class="current_page_item"><a href="{{ url('/home') }}" accesskey="1" title="">Главная</a></li>
+				<li><a href="{{ url('/result') }}" accesskey="2" title="">Результаты</a></li>
+				<li><a href="{{ url('/') }}" accesskey="3" title="">Тест</a></li>
 				@if (Auth::guest())
 					<li><a href="{{ url('/login') }}" accesskey="4" title="">Зайти</a></li>
 					<li><a href="{{ url('/register') }}" accesskey="4" title="">Регистрация</a></li>
@@ -62,7 +61,6 @@
 	</div> 
 </div>
 
-<div class="results">Ждем ответа</div>
 
 
 

@@ -18,9 +18,9 @@ class CreateUsersTable extends Migration
             $table->string('email')->unique();
             $table->string('password');
             $table->rememberToken();
-            $table->integer('user_id')->unsigned()->default(1);
+            $table->integer('dobro_id')->unsigned()->default(1);
         //создание внешнего ключа для поля 'user_id', который связан с полем id таблицы 'charakter'
-        $table->foreign('user_id')->references('id')->on('charakters');
+        $table->foreign('dobro_id')->references('id')->on('dobros');
             $table->timestamps();
         });
     }

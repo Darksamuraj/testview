@@ -23,7 +23,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
-    public function charakter(){
-        return $this->belongsTo('App\charakter');
+    public function dobro(){
+        return $this->belongsTo('App\Dobro');
   }
 }

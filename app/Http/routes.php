@@ -16,6 +16,10 @@ Route::get('/', function () {
 });
 Route::post('/sendmail', 'Ajax\ContactController@send');
 
+Route::get('/result', function(){
+	return view('result');
+});
+
 Route::auth();
 
 Route::get('/home', 'HomeController@index');
